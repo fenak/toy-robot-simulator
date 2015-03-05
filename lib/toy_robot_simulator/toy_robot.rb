@@ -30,13 +30,13 @@ module ToyRobotSimulator
 
     def rotate_left
       if (placed?)
-        @orientation.turn_left and return
+        @orientation.rotate_left and return
       end
     end
 
     def rotate_right
       if (placed?)
-        @orientation.turn_right and return
+        @orientation.rotate_right and return
       end
     end
 

@@ -11,12 +11,12 @@ module ToyRobotSimulator
       @cardinal_orientation.name.split("::").last
     end
 
-    def turn_left
+    def rotate_left
       @cardinal_orientation = @cardinal_orientation.left
       self
     end
 
-    def turn_right
+    def rotate_right
       @cardinal_orientation = @cardinal_orientation.right
       self
     end

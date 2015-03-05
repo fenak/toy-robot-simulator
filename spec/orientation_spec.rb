@@ -17,11 +17,11 @@ describe ToyRobotSimulator::Orientation do
     end
 
     it "should have West on its left" do
-      @orientation.turn_left.name.must_equal "West"
+      @orientation.rotate_left.name.must_equal "West"
     end
 
     it "should have East on its right" do
-      @orientation.turn_right.name.must_equal "East"
+      @orientation.rotate_right.name.must_equal "East"
     end
 
     it "should calculate position for a step towards orientation" do
@@ -43,11 +43,11 @@ describe ToyRobotSimulator::Orientation do
     end
 
     it "should have North on its left" do
-      @orientation.turn_left.name.must_equal "North"
+      @orientation.rotate_left.name.must_equal "North"
     end
 
     it "should have South on its right" do
-      @orientation.turn_right.name.must_equal "South"
+      @orientation.rotate_right.name.must_equal "South"
     end
 
     it "should calculate position for a step towards orientation" do
@@ -69,11 +69,11 @@ describe ToyRobotSimulator::Orientation do
     end
 
     it "should have East on its left" do
-      @orientation.turn_left.name.must_equal "East"
+      @orientation.rotate_left.name.must_equal "East"
     end
 
     it "should have West on its right" do
-      @orientation.turn_right.name.must_equal "West"
+      @orientation.rotate_right.name.must_equal "West"
     end
 
     it "should calculate position for a step towards orientation" do
@@ -95,11 +95,11 @@ describe ToyRobotSimulator::Orientation do
     end
 
     it "should have South on its left" do
-      @orientation.turn_left.name.must_equal "South"
+      @orientation.rotate_left.name.must_equal "South"
     end
 
     it "should have North on its right" do
-      @orientation.turn_right.name.must_equal "North"
+      @orientation.rotate_right.name.must_equal "North"
     end
 
     it "should calculate position for a step towards orientation" do
