@@ -34,7 +34,7 @@ describe ToyRobotSimulator::ToyRobot do
   end
 
   describe "#move" do
-    it "should move one step based on direction" do
+    it "should move one step based on orientation" do
       @toy_robot.place(0, 0, :north)
 
       @toy_robot.move
@@ -111,7 +111,7 @@ describe ToyRobotSimulator::ToyRobot do
   end
 
   describe "#report" do
-    it "should report current position and direction" do
+    it "should report current position and orientation" do
       @toy_robot.place(2, 3, :west)
 
       @toy_robot.report.must_equal "2,3,WEST"

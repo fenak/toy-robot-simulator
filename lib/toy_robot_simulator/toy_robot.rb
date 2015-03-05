@@ -8,13 +8,13 @@ module ToyRobotSimulator
       @table_top = table_top
     end
 
-    def place(x, y, direction)
+    def place(x, y, orientation)
       new_position = ToyRobotSimulator::Position.new(x, y)
-      new_direction = ToyRobotSimulator::Direction.new(direction)
+      new_orientation = ToyRobotSimulator::Direction.new(orientation)
 
       if (@table_top.valid_position?(new_position))
         @position = new_position
-        @orientation = new_direction
+        @orientation = new_orientation
       end
     end
 
