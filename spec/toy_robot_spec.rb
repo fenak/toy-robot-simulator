@@ -29,7 +29,7 @@ describe ToyRobotSimulator::ToyRobot do
     it "should not be placed with an invalid diretion" do
       proc {
         @toy_robot.place(0, 0, :northwest)
-      }.must_raise ToyRobotSimulator::Error::InvalidDirectionError
+      }.must_raise ToyRobotSimulator::Error::InvalidOrientationError
     end
   end
 

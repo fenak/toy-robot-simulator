@@ -1,5 +1,5 @@
 module ToyRobotSimulator
   module Error
-    class InvalidDirectionError < RuntimeError; end
+    class InvalidOrientationError < RuntimeError; end
   end
 end
