@@ -5,13 +5,15 @@ require_relative 'toy_robot_simulator/command_parser'
 module ToyRobotSimulator
   class Main
 
-    def initialize
-      table_top = ToyRobotSimulator::TableTop.new(5)
+    def initialize(input_file, options={})
+      @input_file = input_file
+      size = options[:size] || 5
+      table_top = ToyRobotSimulator::TableTop.new(size)
       @toy_robot = ToyRobotSimulator::ToyRobot.new(table_top)
     end
 
     def run
-      process('input.txt')
+      process(@input_file)
     end
 
     private
@@ -25,5 +27,3 @@ module ToyRobotSimulator
     end
   end
 end
-
-ToyRobotSimulator::Main.new.run

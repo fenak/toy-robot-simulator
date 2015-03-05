@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require_relative '../lib/toy_robot_simulator'
+
+options = {}
+
+OptionParser.new do |opts|
+
+  opts.banner = "Usage: toy-robot-simulator [-s size] input-file"
+
+  opts.on('-s', '--size=SIZE', 'The table top size (defaults to 5)') { |s| options[:size] = s.to_i }
+end.parse!
+
+fail "No input file was given" if ARGV.empty?
+
+input_file = ARGV.last
+
+ToyRobotSimulator::Main.new(input_file, options).run
