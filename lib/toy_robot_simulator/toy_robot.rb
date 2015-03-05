@@ -40,6 +40,12 @@ module ToyRobotSimulator
       end
     end
 
+    def report
+      if (placed?)
+        [current_position.x, current_position.y, current_direction.upcase].join(',')
+      end
+    end
+
     def current_position
       @position
     end

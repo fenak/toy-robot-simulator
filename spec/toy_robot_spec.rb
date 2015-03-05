@@ -109,4 +109,16 @@ describe ToyRobotSimulator::ToyRobot do
       @toy_robot.current_direction.must_be_nil
     end
   end
+
+  describe "#report" do
+    it "should report current position and direction" do
+      @toy_robot.place(2, 3, :west)
+
+      @toy_robot.report.must_equal "2,3,WEST"
+    end
+
+    it "should not report anything if toy robot isn't placed anywhere" do
+      @toy_robot.report.must_be_nil
+    end
+  end
 end
