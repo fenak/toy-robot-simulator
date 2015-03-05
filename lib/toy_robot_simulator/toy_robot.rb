@@ -14,13 +14,13 @@ module ToyRobotSimulator
 
       if (@table_top.valid_position?(new_position))
         @position = new_position
-        @direction = new_direction
+        @orientation = new_direction
       end
     end
 
     def move
       if (placed?)
-        new_position = @direction.step(@position)
+        new_position = @orientation.step(@position)
 
         if (@table_top.valid_position?(new_position))
           @position = new_position
@@ -30,13 +30,13 @@ module ToyRobotSimulator
 
     def rotate_left
       if (placed?)
-        @direction.turn_left and return
+        @orientation.turn_left and return
       end
     end
 
     def rotate_right
       if (placed?)
-        @direction.turn_right and return
+        @orientation.turn_right and return
       end
     end
 
@@ -51,12 +51,12 @@ module ToyRobotSimulator
     end
 
     def current_direction
-      @direction.name if @direction
+      @orientation.name if @orientation
     end
 
     private
     def placed?
-      @position && @direction
+      @position && @orientation
     end
   end
 end
