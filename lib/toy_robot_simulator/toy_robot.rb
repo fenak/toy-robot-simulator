@@ -1,4 +1,4 @@
-require_relative 'direction'
+require_relative 'orientation'
 require_relative 'position'
 
 module ToyRobotSimulator
@@ -10,7 +10,7 @@ module ToyRobotSimulator
 
     def place(x, y, orientation)
       new_position = ToyRobotSimulator::Position.new(x, y)
-      new_orientation = ToyRobotSimulator::Direction.new(orientation)
+      new_orientation = ToyRobotSimulator::Orientation.new(orientation)
 
       if (@table_top.valid_position?(new_position))
         @position = new_position
