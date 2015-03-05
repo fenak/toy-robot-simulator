@@ -16,14 +16,14 @@ describe ToyRobotSimulator::ToyRobot do
       @toy_robot.place(0, 0, :north)
 
       @toy_robot.current_position.wont_be_nil
-      @toy_robot.current_direction.must_equal "North"
+      @toy_robot.current_orientation.must_equal "North"
     end
 
     it "should not be placed in an invalid position" do
       @toy_robot.place(8, 8, :north)
 
       @toy_robot.current_position.must_be_nil
-      @toy_robot.current_direction.must_be_nil
+      @toy_robot.current_orientation.must_be_nil
     end
 
     it "should not be placed with an invalid diretion" do
@@ -41,7 +41,7 @@ describe ToyRobotSimulator::ToyRobot do
 
       @toy_robot.current_position.x.must_equal 0
       @toy_robot.current_position.y.must_equal 1
-      @toy_robot.current_direction.must_equal "North"
+      @toy_robot.current_orientation.must_equal "North"
     end
 
     it "should not move if width boundary reached" do
@@ -51,7 +51,7 @@ describe ToyRobotSimulator::ToyRobot do
 
       @toy_robot.current_position.x.must_equal 4
       @toy_robot.current_position.y.must_equal 4
-      @toy_robot.current_direction.must_equal "East"
+      @toy_robot.current_orientation.must_equal "East"
     end
 
     it "should not move if height boundary reached" do
@@ -61,14 +61,14 @@ describe ToyRobotSimulator::ToyRobot do
 
       @toy_robot.current_position.x.must_equal 4
       @toy_robot.current_position.y.must_equal 0
-      @toy_robot.current_direction.must_equal "South"
+      @toy_robot.current_orientation.must_equal "South"
     end
 
     it "should not do anything if toy robot isn't placed anywhere" do
       @toy_robot.move
 
       @toy_robot.current_position.must_be_nil
-      @toy_robot.current_direction.must_be_nil
+      @toy_robot.current_orientation.must_be_nil
     end
   end
 
@@ -80,14 +80,14 @@ describe ToyRobotSimulator::ToyRobot do
 
       @toy_robot.current_position.x.must_equal 2
       @toy_robot.current_position.y.must_equal 2
-      @toy_robot.current_direction.must_equal "West"
+      @toy_robot.current_orientation.must_equal "West"
     end
 
     it "should not do anything if toy robot isn't placed anywhere" do
       @toy_robot.rotate_left
 
       @toy_robot.current_position.must_be_nil
-      @toy_robot.current_direction.must_be_nil
+      @toy_robot.current_orientation.must_be_nil
     end
   end
 
@@ -99,14 +99,14 @@ describe ToyRobotSimulator::ToyRobot do
 
       @toy_robot.current_position.x.must_equal 2
       @toy_robot.current_position.y.must_equal 2
-      @toy_robot.current_direction.must_equal "South"
+      @toy_robot.current_orientation.must_equal "South"
     end
 
     it "should not do anything if toy robot isn't placed anywhere" do
       @toy_robot.rotate_right
 
       @toy_robot.current_position.must_be_nil
-      @toy_robot.current_direction.must_be_nil
+      @toy_robot.current_orientation.must_be_nil
     end
   end
 

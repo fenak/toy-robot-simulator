@@ -42,7 +42,7 @@ module ToyRobotSimulator
 
     def report
       if (placed?)
-        [current_position.x, current_position.y, current_direction.upcase].join(',')
+        [current_position.x, current_position.y, current_orientation.upcase].join(',')
       end
     end
 
@@ -50,7 +50,7 @@ module ToyRobotSimulator
       @position
     end
 
-    def current_direction
+    def current_orientation
       @orientation.name if @orientation
     end
 
