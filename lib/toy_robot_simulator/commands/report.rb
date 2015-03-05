@@ -2,7 +2,7 @@ module ToyRobotSimulator
   module Commands
     class Report
 
-      def initialize(toy_robot, output)
+      def initialize(toy_robot, output=$stdout)
         @toy_robot = toy_robot
         @output = output
       end
