@@ -2,6 +2,8 @@ require 'minitest/spec'
 require 'minitest/autorun'
 
 require_relative '../lib/toy_robot_simulator/command_parser'
+require_relative '../lib/toy_robot_simulator/table_top'
+require_relative '../lib/toy_robot_simulator/toy_robot'
 
 describe ToyRobotSimulator::CommandParser do
   before do
