@@ -12,36 +12,36 @@ module ToyRobotSimulator
       new_position = ToyRobotSimulator::Position.new(x, y)
       new_orientation = ToyRobotSimulator::Orientation.new(orientation)
 
-      if (@table_top.valid_position?(new_position))
+      if @table_top.valid_position?(new_position)
         @position = new_position
         @orientation = new_orientation
       end
     end
 
     def move
-      if (placed?)
+      if placed?
         new_position = @orientation.step(@position)
 
-        if (@table_top.valid_position?(new_position))
+        if @table_top.valid_position?(new_position)
           @position = new_position
         end
       end
     end
 
     def rotate_left
-      if (placed?)
+      if placed?
         @orientation.rotate_left and return
       end
     end
 
     def rotate_right
-      if (placed?)
+      if placed?
         @orientation.rotate_right and return
       end
     end
 
     def report
-      if (placed?)
+      if placed?
         [current_position.x, current_position.y, current_orientation.upcase].join(',')
       end
     end
